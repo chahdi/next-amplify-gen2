@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import '@aws-amplify/ui-react/styles.css';
-import { ThemeProvider } from '@aws-amplify/ui-react';
+
 
 import ConfigureAmplifyClientSide from "@/components/ConfigureAmplify";
 

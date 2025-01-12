@@ -5,7 +5,7 @@ import { revalidatePath } from "next/cache";
 import { AuthGetCurrentUserServer, cookiesClient } from "@/utils/amplify-utils";
 import {TodoCreateForm} from "@/ui-components/index";
 import Logout from "@/components/Logout";
-import { ThemeProvider } from "@aws-amplify/ui-react";
+
 
 async function App() {
   const user = await AuthGetCurrentUserServer();
