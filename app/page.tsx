@@ -3,8 +3,9 @@
 import { revalidatePath } from "next/cache";
 
 import { AuthGetCurrentUserServer, cookiesClient } from "@/utils/amplify-utils";
-
+import {TodoCreateForm} from "@/ui-components/index";
 import Logout from "@/components/Logout";
+import { ThemeProvider } from "@aws-amplify/ui-react";
 
 async function App() {
   const user = await AuthGetCurrentUserServer();
@@ -23,13 +24,9 @@ async function App() {
 
   return (
     <>
-      <h1>Hello, Amplify 👋</h1>
+    <h1>Hello, Amplify 👋</h1>
       {user && <Logout />}
-      <form action={addTodo}>
-        <input type="text" name="title" />
-        <button type="submit">Add Todo</button>
-      </form>
-
+      <TodoCreateForm />
       <ul>
         {todos && todos.map((todo) => <li key={todo.id}>{todo.content}</li>)}
       </ul>
