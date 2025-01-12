@@ -11,16 +11,7 @@ async function App() {
   const user = await AuthGetCurrentUserServer();
   const { data: todos } = await cookiesClient.models.Todo.list();
 
-  async function addTodo(data: FormData) {
-    "use server";
-    const title = data.get("title") as string;
-    await cookiesClient.models.Todo.create({
-      content: title,
-      done: false,
-      priority: "medium",
-    });
-    revalidatePath("/");
-  }
+  
 
   return (
     <>
