@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import '@aws-amplify/ui-react/styles.css';
+
+import ConfigureAmplifyClientSide from "@/components/ConfigureAmplify";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,6 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ConfigureAmplifyClientSide />
         {children}
       </body>
     </html>
